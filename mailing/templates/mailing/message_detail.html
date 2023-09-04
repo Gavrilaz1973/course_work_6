@@ -1,0 +1,50 @@
+{% extends 'mailing/base.html' %}
+{% block content %}
+
+<section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Просмотр сообщения</h1>
+            </div>
+        </div>
+    </section>
+    <div class="row text-start">
+        <div class="col-lg-9 col-md-6 col-sm-12">
+            <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <tr>
+                            <td class="w-25">Тема</td>
+                            <td>{{ object.theme }}</td>
+                        </tr>
+                        <tr>
+                            <td class="w-25">Сообщение</td>
+                            <td>{{ object.body }}</td>
+                        </tr>
+                        <tr>
+                            <td class="w-25">Получатель</td>
+                            <td>{{ object.client }}</td>
+                        </tr>
+<!--                        <tr>-->
+<!--                            <td class="w-25">Цена</td>-->
+<!--                            <td>{{ product.price }}</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td class="w-25">Дата создания</td>-->
+<!--                            <td>{{ product.date_create }}</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td class="w-25">Дата изменения</td>-->
+<!--                            <td>{{ product.date_change }}</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td class="w-25">Владелец</td>-->
+<!--                            <td>{{ product.owner|default:'-' }}</td>-->
+<!--                        </tr>-->
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
