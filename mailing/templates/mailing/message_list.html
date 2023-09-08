@@ -11,8 +11,7 @@
 
                 Сервис для управления рассылками, администрирования и получения статистики.</p>
             <p>
-                <a href="#" class="btn btn-primary my-2">Создать рассылку</a>
-                <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+                <a href="{% url 'mailing:messages_create'%}" class="btn btn-primary my-2">Создать рассылку</a>
             </p>
         </div>
     </div>
@@ -25,12 +24,14 @@
             <div class="col">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <p class="card-text">T{{ object.theme}}</p>
+                        <p class="card-text">{{ object.theme }}</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'mailing:messages_detail' object.pk %}">Просмотр</a>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Редактировать</button>
-                                <button type="button" class="btn btn-sm btn-outline-danger">Удалить</button>
+                                <a type="button" class="btn btn-sm btn-outline-secondary"
+                                   href="{% url 'mailing:messages_detail' object.pk %}">Просмотр</a>
+                                <a type="button" class="btn btn-sm btn-outline-secondary"
+                                   href="{% url 'mailing:messages_update' object.pk %}">Редактировать</a>
+                                <a type="button" class="btn btn-sm btn-outline-danger" href="{% url 'mailing:messages_delete' object.pk %}">Удалить</a>
                             </div>
                             <small class="text-body-secondary">9 mins</small>
                         </div>

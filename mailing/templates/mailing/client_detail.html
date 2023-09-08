@@ -1,0 +1,50 @@
+{% extends 'mailing/base.html' %}
+{% block content %}
+
+<section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Просмотр получателя</h1>
+            </div>
+        </div>
+    </section>
+    <div class="row text-start">
+        <div class="col-lg-9 col-md-6 col-sm-12">
+            <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <tr>
+                            <td class="w-25">ФИО</td>
+                            <td>{{ object.name }}</td>
+                        </tr>
+                        <tr>
+                            <td class="w-25">Электронная почта</td>
+                            <td>{{ object.email }}</td>
+                        </tr>
+                        <tr>
+                            <td class="w-25">Комментарии</td>
+                            <td>{{ object.comment }}</td>
+                        </tr>
+<!--                        <tr>-->
+<!--                            <td class="w-25">Время рассылки</td>-->
+<!--                            <td>{{ object.time }}</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td class="w-25">Периодичность рассылки</td>-->
+<!--                            <td>{{ object.period }}</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td class="w-25">Статус</td>-->
+<!--                            <td>{{ object.status }}</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td class="w-25">Владелец</td>-->
+<!--                            <td>{{ product.owner|default:'-' }}</td>-->
+<!--                        </tr>-->
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
