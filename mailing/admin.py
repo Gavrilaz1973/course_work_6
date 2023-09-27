@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from mailing.models import Client, Message
+from mailing.models import Client, Message, EmailLog
 
 
 @admin.register(Client)
@@ -13,9 +13,9 @@ class MessageAdmin(admin.ModelAdmin):
     list_display = ('theme', 'body')
 
 
-# @admin.register(Settings)
-# class SettingsAdmin(admin.ModelAdmin):
-#     list_display = ('message', 'status')
+@admin.register(EmailLog)
+class EmailLogAdmin(admin.ModelAdmin):
+    list_display = ('message', 'status', 'last_attempt_time')
 
 
 
