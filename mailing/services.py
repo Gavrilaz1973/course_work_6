@@ -30,7 +30,7 @@ def cronjob_daily():
         if email.period == 'daily':
             send_email(email)
             email.status = 'launched'
-            email.seve()
+            email.save()
 
 
 def cronjob_weekly():

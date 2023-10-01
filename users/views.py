@@ -38,14 +38,14 @@ class RegisterView(CreateView):
         new_user.email_verification_token = token
         new_user.save()
 
-        current_site = get_current_site(self.request)
-        mail_subject = 'Подтвердите ваш аккаунт'
-        message = (
-            f'Для завершения регистрации перейдите по ссылке:\n'
-            f'http://{current_site.domain}{reverse("users:verify_email", kwargs={"uid": new_user.pk, "token": token})}'
-        )
-        send_mail(subject=mail_subject, message=message, from_email=settings.EMAIL_HOST_USER,
-                  recipient_list=[new_user.email])
+        # current_site = get_current_site(self.request)
+        # mail_subject = 'Подтвердите ваш аккаунт'
+        # message = (
+        #     f'Для завершения регистрации перейдите по ссылке:\n'
+        #     f'http://{current_site.domain}{reverse("users:verify_email", kwargs={"uid": new_user.pk, "token": token})}'
+        # )
+        # send_mail(subject=mail_subject, message=message, from_email=settings.EMAIL_HOST_USER,
+        #           recipient_list=[new_user.email])
 
         return super().form_valid(form)
 

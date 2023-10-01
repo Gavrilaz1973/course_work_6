@@ -147,9 +147,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRONJOBS = [
-    ('43 22 * * *', 'mailing.services.cronjob_daily'),
-    ('43 22 * * 4', 'mailing.services.cronjob_weekly'),
-    ('43 22 14 * *', 'mailing.services.cronjob_monthly'),
+    ('43 9 * * *', 'mailing.services.cronjob_daily'),
+    ('43 9 * * 7', 'mailing.services.cronjob_weekly'),
+    ('43 9 1 * *', 'mailing.services.cronjob_monthly'),
 ]
 
 AUTH_USER_MODEL = 'users.User'
